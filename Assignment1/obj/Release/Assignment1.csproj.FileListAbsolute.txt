@@ -16,3 +16,9 @@ H:\CS\LabsNAssignments\Assignment1\Assignment1\obj\Release\Assignment1.pdb
 H:\CS\LabsNAssignments\Assignment1\Assignment1\bin\Release\Assignment1.exe
 H:\CS\LabsNAssignments\Assignment1\Assignment1\bin\Release\Assignment1.pdb
 H:\CS\LabsNAssignments\Assignment1\Assignment1\obj\Release\Assignment1.csprojResolveAssemblyReference.cache
+D:\Git\Assignment1\bin\Release\Assignment1.exe.config
+D:\Git\Assignment1\obj\Release\Assignment1.exe
+D:\Git\Assignment1\obj\Release\Assignment1.pdb
+D:\Git\Assignment1\bin\Release\Assignment1.exe
+D:\Git\Assignment1\bin\Release\Assignment1.pdb
+D:\Git\Assignment1\obj\Release\Assignment1.csprojResolveAssemblyReference.cache

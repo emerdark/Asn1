@@ -17,10 +17,10 @@ namespace Assignment1
                 int index = 1;
                 powerTo implement = new powerTo();
                 int a, b;
-               int result;
+                int result;
                 implement.getNumber(out a, ref index);
                 implement.getNumber(out b, ref index);
-                int[] arr = new int[b+1];
+                int[] arr = new int[b + 1];
 
                 for (int i = 1; i <= b; i++)
                 {
@@ -30,15 +30,29 @@ namespace Assignment1
                 implement.showResult(a, b, arr);
                 while (true)
                 {
+                    Console.ResetColor();
+                    Console.WriteLine();
+                    Console.BackgroundColor = ConsoleColor.White;
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.WriteLine("Continue (y/n)");
+                    Console.ResetColor();
+                   
                     try
                     {
-                        Console.WriteLine("Continue (y/n)");
-                        ans = Console.ReadLine();
+                        if ((ans = Console.ReadLine()) == "")
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            throw new System.ArgumentException("Empty String Detected");
+
+                        }
                         break;
                     }
-                    catch (Exception e)
+                    catch (System.ArgumentException ex)// took e variable out
                     {
-                        Console.WriteLine("Enter Again");
+                        
+                        Console.WriteLine(ex.Message + "\nPlease re-Enter");
+                        Console.ResetColor();
+
                     }
 
                 }
@@ -96,7 +110,6 @@ namespace Assignment1
         public void getResult(int a, int b, out int result)
         {
             result = Convert.ToInt32(Math.Pow(a, b));
-
         }
         public void showResult(int a, int b, int[] arr)
         {
