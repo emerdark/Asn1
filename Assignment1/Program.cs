@@ -23,11 +23,20 @@ namespace Assignment1
                 int[] arr = new int[b + 1];
 
                 for (int i = 1; i <= b; i++)
-                {
-                    implement.getResult(a, i, out result);
-                    arr[i] = result;
+                {                    
+                    try
+                    {
+                        implement.getResult(a, i, out result);
+                        arr[i] = result;
+                    }
+                    catch(System.OverflowException )
+                    {
+                        Console.WriteLine("Result was too big for the memory. Broke at b ="+i);
+                        b = i;
+                        break;
+                    }
                 }
-                implement.showResult(a, b, arr);
+               implement.showResult(a, b, arr);
                 while (true)
                 {
                     Console.ResetColor();
@@ -43,16 +52,13 @@ namespace Assignment1
                         {
                             Console.ForegroundColor = ConsoleColor.Red;
                             throw new System.ArgumentException("Empty String Detected");
-
                         }
                         break;
                     }
                     catch (System.ArgumentException ex)// took e variable out
-                    {
-                        
+                    {                        
                         Console.WriteLine(ex.Message + "\nPlease re-Enter");
                         Console.ResetColor();
-
                     }
 
                 }
@@ -129,7 +135,7 @@ namespace Assignment1
                 {
                     Console.BackgroundColor = ConsoleColor.White;
                     Console.ForegroundColor = ConsoleColor.Black;
-                    Console.WriteLine(a + " ^ " + i + " = " + arr[i]);
+                    Console.WriteLine("{0:D} ^ {1:D} = {2:D}",a,   i ,  arr[i]);
                     Console.ResetColor();
                 }
             }
